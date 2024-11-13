@@ -2,7 +2,6 @@ import { gql } from "@apollo/client";
 import Head from "next/head";
 import Link from "next/link";
 import Header from "../components/header";
-import EntryHeader from "../components/entry-header";
 import Footer from "../components/footer";
 import style from "../styles/front-page.module.css";
 
@@ -24,54 +23,26 @@ export default function Component(props) {
       />
 
       <main className="container">
-        <EntryHeader title="Welcome to the Faust Scaffold Blueprint" />
+        <section className={style.hero}>
+          <h1>Compare prices and find the best deals</h1>
+          <p>Discover millions of products from thousands of stores</p>
+        </section>
 
-        <section className={style.cardGrid}>
-          <Link
-            href="https://faustjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={style.card}
-          >
-            <h3>Documentation →</h3>
-            <p>
-              Learn more about Faust.js through guides and reference
-              documentation.
-            </p>
-          </Link>
+        <section className={style.featuredCategories}>
+          <h2>Popular Categories</h2>
+          <div className={style.categoryGrid}>
+            <Link href="/electronics" className={style.categoryCard}>
+              <img src="/electronics.jpg" alt="Electronics" />
+              <h3>Electronics</h3>
+            </Link>
+          </div>
+        </section>
 
-          <Link
-            href="https://my.wpengine.com/atlas#/create/blueprint"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={style.card}
-          >
-            <h3>Blueprints →</h3>
-            <p>Explore production ready Faust.js starter projects.</p>
-          </Link>
-
-          <Link
-            href="https://wpengine.com/atlas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={style.card}
-          >
-            <h3>Deploy →</h3>
-            <p>
-              Deploy your Faust.js app to Headless Platform along with your WordPress
-              instance.
-            </p>
-          </Link>
-
-          <Link
-            href="https://github.com/wpengine/faustjs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={style.card}
-          >
-            <h3>Contribute →</h3>
-            <p>Visit us on GitHub to explore how you can contribute!</p>
-          </Link>
+        <section className={style.todaysDeals}>
+          <h2>Today's Best Deals</h2>
+          <div className={style.productGrid}>
+            {/* Add your product cards here */}
+          </div>
         </section>
       </main>
 

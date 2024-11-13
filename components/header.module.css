@@ -1,34 +1,62 @@
-.header > div {
+.header {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.topHeader {
+  padding: 1rem 0;
+  background: #fff;
+}
+
+.topHeader > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 4rem;
+  gap: 2rem;
 }
 
-.siteTitle {
-  font-size: 2rem;
-  margin: 0;
-  margin-bottom: 0.5rem;
-}
-
-.siteDescription {
-  font-size: 1rem;
-  margin: 0;
-}
-
-.nav ul {
+.searchContainer {
+  flex: 1;
   display: flex;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e1e1e1;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.searchButton {
+  padding: 0.75rem 2rem;
+  background: #0066c0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.userActions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.categoryNav {
+  background: #f8f8f8;
+  padding: 0.75rem 0;
+}
+
+.categoryNav ul {
+  display: flex;
+  gap: 2rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav ul li {
-  margin-right: 1rem;
-  font-size: 1.25rem;
-}
-
-.nav ul li:last-child {
-  margin-right: 0;
+.siteTitle {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #0066c0;
 }
