@@ -10,6 +10,15 @@ export default function Component(props) {
     props.data.generalSettings;
   const menuItems = props.data.primaryMenuItems.nodes;
 
+  const categories = [
+    { name: "Electronics", image: "/images/electronics.jpg", slug: "electronics" },
+    { name: "Computers", image: "/images/computers.jpg", slug: "computers" },
+    { name: "Phones", image: "/images/phones.jpg", slug: "phones" },
+    { name: "Gaming", image: "/images/gaming.jpg", slug: "gaming" },
+    { name: "Home", image: "/images/home.jpg", slug: "home" },
+    { name: "Sports", image: "/images/sports.jpg", slug: "sports" },
+  ];
+
   return (
     <>
       <Head>
@@ -31,17 +40,23 @@ export default function Component(props) {
         <section className={style.featuredCategories}>
           <h2>Popular Categories</h2>
           <div className={style.categoryGrid}>
-            <Link href="/electronics" className={style.categoryCard}>
-              <img src="/electronics.jpg" alt="Electronics" />
-              <h3>Electronics</h3>
-            </Link>
-          </div>
-        </section>
-
-        <section className={style.todaysDeals}>
-          <h2>Today's Best Deals</h2>
-          <div className={style.productGrid}>
-            {/* Add your product cards here */}
+            {categories.map((category) => (
+              <Link 
+                key={category.slug}
+                href={`/category/${category.slug}`} 
+                className={style.categoryCard}
+              >
+                <img 
+                  src={category.image} 
+                  alt={category.name}
+                  // Fallback image if the category image doesn't exist
+                  onError={(e) => {
+                    e.target.src = "https://via.placeholder.com/300x200";
+                  }}
+                />
+                <h3>{category.name}</h3>
+              </Link>
+            ))}
           </div>
         </section>
       </main>

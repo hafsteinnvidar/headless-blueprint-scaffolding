@@ -18,10 +18,13 @@
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .categoryCard:hover {
   transform: translateY(-4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .categoryCard img {
@@ -34,6 +37,7 @@
   padding: 1rem;
   margin: 0;
   text-align: center;
+  font-size: 1.1rem;
 }
 
 .productGrid {
@@ -41,4 +45,10 @@
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
+}
+
+section h2 {
+  font-size: 1.75rem;
+  margin: 2rem 0;
+  text-align: center;
 }
